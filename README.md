@@ -29,3 +29,35 @@ Files:
 - WeightViz.ipynb: Extracting some weights
 - SorghumDataset.py: Implementation of the class of our data.
 - VisualizingDatasetTransforms.ipynb: See effects of transforms on data
+
+# Best Config
+Use the following transformations
+```python
+trans = [
+        transforms.RandomChoice([
+            transforms.RandomHorizontalFlip(p=0.5),
+            transforms.RandomVerticalFlip(p=0.5),
+            transforms.RandomRotation(degrees=(0, 180)),
+            transforms.RandomPerspective()
+
+        ]),
+        transforms.RandomChoice([
+            transforms.RandomGrayscale(p=0.1),
+            transforms.ColorJitter(brightness=.3, hue=.4),
+            transforms.GaussianBlur(kernel_size=5),
+            transforms.RandomInvert(p=0.1)
+        ]),
+
+        transforms.RandomChoice([
+            transforms.RandomResizedCrop(size=(512, 512), scale=(0.1, 1.00)),
+            transforms.Resize(size=(512, 512)),
+        ]),
+
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                             std=[0.229, 0.224, 0.225]),
+        transforms.RandomErasing(inplace=True),
+    ]
+```    
+    
+Training a EfficientNet-b4 backbone with pretrained weights, learning rate 1e-3 and 30 epochs
