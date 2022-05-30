@@ -1,6 +1,8 @@
 # Sorghum100-CultivarId
 Code, Report and Presentation of my solution to the Sorghum -100 Cultivar Identification - FGVC 9 Kaggle Competition
 
+<img src="figures/data_augmentation.png" alt="Italian Trulli">
+
 # Before running
 
 Must download data from https://www.kaggle.com/competitions/sorghum-id-fgvc-9/data
