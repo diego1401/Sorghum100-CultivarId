@@ -1,6 +1,11 @@
 # Sorghum100-CultivarId
 Code, Report and Presentation of my solution to the Sorghum -100 Cultivar Identification - FGVC 9 Kaggle Competition
 
+# Before running
+
+Must download data from https://www.kaggle.com/competitions/sorghum-id-fgvc-9/data
+Put data in a folder named "data".
+Create empty folders "embeddings", "models", "plots" and "Submissions" for the rest of the experiments.
 
 # Explanation of all files and folders
 
@@ -15,7 +20,6 @@ Folders:
 Files:
 
 - TrainModel.py: With this file we trained most of our models
-- TrainModel_cleaned.py: Here the files were reorganized and better distributed among utils.py and SorghumDataset.py. The file works, however due to the way that consoles, and kernels work in Azure (you have to close and reopen consoles for some changes to be taken into account), it was decided to just use the above file for training. This file is more readable so you might use it as reference.
 - utils.py: some useful functions
 - create_embeddings.py: How we create the embeddings
 - CreateSubmissions.ipynb: Notebook to create submissions, in order we have the vanilla inference, the ensembling with averaging, and the ensembling with maxes (using the mode function).
