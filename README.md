@@ -62,4 +62,4 @@ trans = [
     
 Training a EfficientNet-b4 backbone with pretrained weights, learning rate 1e-3 and 30 epochs
 
-#Should give around 77% accuracy on inference, and 80% with ensembling
+Should give around 77% accuracy on inference, and 80% with ensembling
